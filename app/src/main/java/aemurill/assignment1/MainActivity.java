@@ -12,24 +12,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button myButton1 = (Button) findViewById(R.id.button_edit);
-        Button myButton2 = (Button) findViewById(R.id.button_view);
-        Button myButton3 = (Button) findViewById(R.id.button_exit);
+        Button buttonEdit = (Button) findViewById(R.id.button_edit);
+        Button buttonView = (Button) findViewById(R.id.button_view);
+        Button buttonExit = (Button) findViewById(R.id.button_exit);
+        Button buttonDone = (Button) findViewById(R.id.button_done);
     }
 
 
 
 
-    public void onClick(View view){
-        switch (view.getId()){
-            case R.id.button_edit:
-                Intent edit_intent = new Intent (MainActivity.this, EditActivity.class);
-                startActivity(edit_intent);
-                break;
-            case R.id.button_view:
-                break;
-            case R.id.button_exit:
-                break;
+        public void onClick(View view){
+            switch (view.getId()){
+                case R.id.button_edit:
+                    Intent edit_intent = new Intent (MainActivity.this, EditActivity.class);
+                    startActivity(edit_intent);
+                    break;
+                case R.id.button_view:
+                    break;
+                case R.id.button_exit:
+                    break;
+            }
         }
-    }
 }

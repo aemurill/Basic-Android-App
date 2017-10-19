@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Assignment 1</string>
     <string name="button_edit">Edit</string>
+    <string name="button_done">Done</string>
     <string name="button_view">View</string>
     <string name="button_exit">Exit</string>
     <string name="edit_name">Name</string>
     <string name="edit_year">Year</string>
     <string name="edit_photographer">Photographer</string>
-    <string name="button_back">Back</string>
 </resources>
