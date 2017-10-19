@@ -9,36 +9,33 @@
     tools:layout_editor_absoluteX="0dp">
 
     <Button
-        android:id="@+id/button_edit"
+        android:id="@+id/editButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_edit"
-        app:layout_constraintBottom_toTopOf="@+id/button_exit"
-        app:layout_constraintTop_toBottomOf="@+id/button_view"
+        app:layout_constraintBottom_toTopOf="@+id/viewButton"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.51" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/button_view"
+        android:id="@+id/viewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_view"
         android:textIsSelectable="false"
-        app:layout_constraintBottom_toTopOf="@+id/button_edit"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/exitButton"
+        app:layout_constraintTop_toBottomOf="@+id/editButton"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
-        android:id="@+id/button_exit"
+        android:id="@+id/exitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_exit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_edit"
+        app:layout_constraintTop_toBottomOf="@+id/viewButton"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

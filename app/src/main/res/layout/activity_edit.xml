@@ -9,48 +9,48 @@
     tools:layout_editor_absoluteX="0dp">
 
     <EditText
-        android:id="@+id/edit_name"
+        android:id="@+id/nameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/edit_name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/edit_year"
+        app:layout_constraintBottom_toTopOf="@+id/yearEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_year"
+        android:id="@+id/yearEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/edit_year"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/edit_photographer"
+        app:layout_constraintBottom_toTopOf="@+id/photogEditText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <EditText
-        android:id="@+id/edit_photographer"
+        android:id="@+id/photogEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/edit_photographer"
+        android:hint="@string/edit_photog"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_year"
-        app:layout_constraintBottom_toTopOf="@+id/button_done" />
+        app:layout_constraintTop_toBottomOf="@+id/yearEditText"
+        app:layout_constraintBottom_toTopOf="@+id/doneButton" />
 
     <Button
-        android:id="@+id/button_done"
+        android:id="@+id/doneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_done"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_photographer"
+        app:layout_constraintTop_toBottomOf="@+id/photogEditText"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

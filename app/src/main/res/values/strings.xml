@@ -6,5 +6,5 @@
     <string name="button_exit">Exit</string>
     <string name="edit_name">Name</string>
     <string name="edit_year">Year</string>
-    <string name="edit_photographer">Photographer</string>
+    <string name="edit_photog">Photographer</string>
 </resources>
