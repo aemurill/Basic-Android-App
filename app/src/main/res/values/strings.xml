@@ -7,4 +7,8 @@
     <string name="edit_name">Name</string>
     <string name="edit_year">Year</string>
     <string name="edit_photog">Photographer</string>
+
+    <string-array name="years_array">
+        <item></item>
+    </string-array>
 </resources>

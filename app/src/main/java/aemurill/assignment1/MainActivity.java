@@ -22,10 +22,6 @@ public class MainActivity extends AppCompatActivity{
         Button myViewButton = (Button) findViewById(R.id.viewButton);
         Button myExitButton = (Button) findViewById(R.id.exitButton);
         Button myDoneButton = (Button) findViewById(R.id.doneButton);
-//        final EditText edit_text_1 = (EditText) findViewById(R.id.nameEditText);
-//        final EditText edit_text_2 = (EditText) findViewById(R.id.yearEditText);
-//        final EditText edit_text_3 = (EditText) findViewById(R.id.photogEditText);
-
 
         myEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
