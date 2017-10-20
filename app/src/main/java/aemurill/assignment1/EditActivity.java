@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -33,76 +34,66 @@ public class EditActivity extends AppCompatActivity {
 
         Spinner spinYear = (Spinner)findViewById(R.id.yearSpinner);
         spinYear.setAdapter(adapter);
-    }
-//        final EditText edit_text_1 = (EditText) findViewById(R.id.nameEditText);
-//        final EditText edit_text_2 = (EditText) findViewById(R.id.yearEditText);
-//        final EditText edit_text_3 = (EditText) findViewById(R.id.photogEditText);
-    public void SaveText(View view){
+        Button doneButton = (Button) findViewById(R.id.doneButton);
 
-        try {
+            doneButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        // open myfilename.txt for writing
+                        OutputStreamWriter out=new OutputStreamWriter(openFileOutput("myfilename.txt",MODE_APPEND));
+                        // write the contents to the file
 
-            // open myfilename.txt for writing
-            OutputStreamWriter out=new OutputStreamWriter(openFileOutput("myfilename.txt",MODE_APPEND));
-            // write the contents to the file
+                        EditText nET = (EditText)findViewById(R.id.nameEditText);
+                        Spinner ySpin = (Spinner) findViewById(R.id.yearSpinner);
+                        EditText pET = (EditText)findViewById(R.id.photogEditText);
+                        String text = nET.getText().toString() + " ";
+                        text = text + ySpin.getSelectedItem().toString() + " ";
+                        text = text + pET.getText().toString();
+                        out.write(text);
+                        out.write('\n');
 
-            EditText nET = (EditText)findViewById(R.id.nameEditText);
-            Spinner ySpin = (Spinner) findViewById(R.id.yearSpinner);
-            EditText pET = (EditText)findViewById(R.id.photogEditText);
-            String text = nET.getText().toString() + " ";
-            text = text + ySpin.getSelectedItem().toString() + " ";
-            text = text + pET.getText().toString();
-            out.write(text);
-            out.write('\n');
+                        // close the file
 
-            // close the file
+                        out.close();
 
-            out.close();
+                        Toast.makeText(EditActivity.this, "Text Saved!", Toast.LENGTH_LONG).show();
+                    }
 
-            Toast.makeText(this,"Text Saved!",Toast.LENGTH_LONG).show();
-        }
+                    catch (java.io.IOException e) {
+                        //do something if an IOException occurs.
+                        Toast.makeText(EditActivity.this, "Sorry Text could't be added", Toast.LENGTH_LONG).show();
+                    }
+                    StringBuilder text = new StringBuilder();
 
-        catch (java.io.IOException e) {
+                    try {
+                        // open the file for reading we have to surround it with a try
+                        InputStream inStream = openFileInput("myfilename.txt");//open the text file for reading
+                        // if file the available for reading
+                        if (inStream != null) {
+                            // prepare the file for reading
+                            InputStreamReader inputReader = new InputStreamReader(inStream);
+                            BufferedReader buffReader = new BufferedReader(inputReader);
 
-            //do something if an IOException occurs.
-            Toast.makeText(this,"Sorry Text could't be added",Toast.LENGTH_LONG).show();
+                            String line = "";
+                            //We initialize a string "line"
 
-        }
+                            while (( line = buffReader.readLine()) != null) {
+                                //buffered reader reads only one line at a time, hence we give a while loop to read all till the text is null
 
-        StringBuilder text = new StringBuilder();
+                                text.append(line);
+                                text.append('\n');    //to display the text in text line
+                            }}}
 
+                    //now we have to surround it with a catch statement for exceptions
+                    catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
-        try {
-            // open the file for reading we have to surround it with a try
-
-            InputStream inStream = openFileInput("myfilename.txt");//open the text file for reading
-
-            // if file the available for reading
-            if (inStream != null) {
-
-                // prepare the file for reading
-                InputStreamReader inputReader = new InputStreamReader(inStream);
-                BufferedReader buffReader = new BufferedReader(inputReader);
-
-                String line = "";
-                //We initialize a string "line"
-
-                while (( line = buffReader.readLine()) != null) {
-                    //buffered reader reads only one line at a time, hence we give a while loop to read all till the text is null
-
-                    text.append(line);
-                    text.append('\n');    //to display the text in text line
-
-
-                }}}
-
-        //now we have to surround it with a catch statement for exceptions
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //now we assign the text readed to the textview
-        TextView tv = (TextView)findViewById(R.id.textView);
-        tv.setText(text);
-
+                    //now we assign the text readed to the textview
+                    TextView tv = (TextView)findViewById(R.id.textView);
+                    tv.setText(text);
+                }
+            });
     }
 }
