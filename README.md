@@ -1,4 +1,4 @@
-# assignment1
+# cs 121 assignment1
 store photos but not really
 
 ////////////////////
