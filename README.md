@@ -1,6 +1,8 @@
 # assignment1
 store photos but not really
+
 ////////////////////
+
 Very Basic Android Program 1
 
 In this assignment, you are to write an application that allows user to create a list of information
