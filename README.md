@@ -1,5 +1,4 @@
-# cs 121 assignment1
-////////////////////
+# Basic Android Program
 
 Very Basic Android Program 1
 
