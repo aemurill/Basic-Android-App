@@ -1,5 +1,6 @@
 # Basic Android Program
-
+A very basic android program as described by the assignment specifications in my December 2017 Mobile Application Development class.
+```
 Very Basic Android Program 1
 
 In this assignment, you are to write an application that allows user to create a list of information
@@ -7,6 +8,7 @@ about different photos. Information includes “name” tag for the photo, the d
 the name of its photographer. The information should be stored in a file or files on the device.
 
 The app should work as follows:
+
 ❏ the starting screen should have 3 buttons: enter info, view, and exit.
 
 ❏ pressing “enter info” should take the user to a new screen where they can enter a series
@@ -20,3 +22,4 @@ scrollable list. information for each photo can be shown as one string.
 
 ❏ the “exit” button terminates the application, but makes sure that the list of photos will
 be stored first.
+```
